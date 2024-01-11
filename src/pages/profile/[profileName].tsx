@@ -42,7 +42,7 @@ export default function ProfilePage() {
     // Internal variables
     const profileName: string = router.query.profileName?.toString()!
     const profilePlaystyle = "Casual"
-    const profileLookingFor = "Team"
+    const profileLookingFor = "Multiplayer"
     const profileNationality = "DK"
     const profileLevel = "Level 2"
     const [profileImgSrc, setProfileImgSrc] = useState<string>('http://developerjones.dk/lightyear.jpeg')
