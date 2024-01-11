@@ -1,0 +1,94 @@
+@import "Global.styles.scss";
+
+.guest-wrapper {
+    height: 100vh;
+    @apply bg-gray-800 w-full;
+
+    .jumbotron-wrapper,
+    .guest-contents {
+        height: 100vh;
+    }
+
+    .jumbotron-wrapper {
+        background-image: url("http://dev.gamingfriends.gg/images/register/register1.jpg");
+        @apply w-1/2 float-left;
+        @apply hidden lg:block relative;
+        @apply bg-center bg-cover bg-no-repeat;
+
+        .teaser-image {
+            @apply hidden xl:block;
+        }
+    }
+
+    .guest-contents {
+        @apply w-full lg:w-1/2;
+        @apply relative float-left;
+        @apply flex items-center justify-center;
+
+        h2 {
+            @apply text-3xl text-white font-bold mb-10;
+        }
+
+        .register-page {
+            @apply max-w-sm w-full;
+        }
+
+        .guest-form {
+
+            .input-field-wrap,
+            .login-field {
+                @apply w-full;
+
+                .MuiFormControl-root {
+                    @apply w-full;
+                }
+
+                .MuiFormLabel-root {
+                    @apply text-gray-300;
+                }
+
+                .MuiInputBase-root {
+                    @apply pr-0;
+                }
+
+                input,
+                textarea,
+                select {
+                    border-bottom: 2px solid;
+                    @apply block w-full p-3 rounded mb-4 bg-gray-700 text-white border-orange-500 outline-none;
+                }
+
+                .MuiInputAdornment-root {
+                    height: 49px;
+                    border-bottom: 2px solid;
+                    @apply max-h-none mb-4 mx-0;
+                    @apply bg-gray-700 border-orange-500;
+
+                    &.MuiInputAdornment-positionEnd {
+                        button {
+                            @include button;
+                            @include button-orange;
+                            width: calc(100% - 12px);
+                            margin-right: 12px;
+                        }
+                    }
+                }
+            }
+
+            .error-notice {
+                margin-bottom: 20px;
+            }
+
+            .birthday-wrapper,
+            .birthday-inner {
+                height: 75px;
+
+                .birthday-inner {
+                    display: flex;
+                    gap: 15px;
+                    align-items: center;
+                }
+            }
+        }
+    }
+}

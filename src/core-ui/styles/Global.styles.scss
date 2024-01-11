@@ -1,0 +1,67 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+*,
+html {
+    top: 0;
+    left: 0;
+    height: auto;
+    margin: 0;
+    padding: 0;
+    border: none;
+    outline: none !important;
+    box-sizing: border-box;
+}
+
+:root {
+    --lightGreen: #00aa89;
+}
+
+@mixin button {
+    width: 100%;
+    height: 34px;
+    line-height: 34px;
+    padding: 0 8px;
+    font-size: 1rem;
+    border: 0;
+    border-radius: 4px;
+    text-transform: none;
+    cursor: pointer;
+}
+@mixin button-green {
+    color: white !important;
+    background-color: rgb(76, 207, 150) !important;
+}
+@mixin button-orange {
+    color: white !important;
+    @apply bg-orange-500 hover:bg-orange-500;
+}
+
+body {
+    font-size: 1rem;
+    @apply text-white;
+}
+
+h1 {
+    font-size: 1.5rem;
+    font-weight: 500;
+    color: #3f89a1;
+}
+
+.custom-select-field-container {
+    svg {
+        left: auto;
+    }
+
+    label,
+    fieldset {
+        display: none;
+    }
+}
+
+.button {
+    @include button;
+
+    &.button-orange { @include button-orange; }
+}

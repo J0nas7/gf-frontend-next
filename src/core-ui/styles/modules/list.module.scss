@@ -1,0 +1,49 @@
+@mixin searchBarHeight {
+    height: var(--searchBarHeight);
+    line-height: var(--searchBarHeight);
+    padding-top: 0;
+    padding-bottom: 0;
+}
+
+.search-form {
+    padding: 0;
+    --searchBarHeight: 42px;
+
+    .search-bar-field {
+        @apply w-full;
+
+        input[type=text] {
+            @include searchBarHeight;
+            background-color: white;
+            @apply rounded-lg;
+        }
+
+        fieldset {
+            display: none;
+        }
+    }
+
+    .select-field {
+        width: calc(50% - 4px);
+        float: left;
+
+        div, [role=combobox] {
+            @apply w-full;
+        }
+
+        [role=combobox] {
+            color: #fff;
+            border-bottom: 2px #fff solid;
+            @include searchBarHeight;
+            @apply bg-[#384151];
+        }
+    }
+
+    &.search-button {
+        button {
+            @include searchBarHeight;
+            background-color: var(--lightGreen);
+            @apply w-full text-white;
+        }
+    }
+}

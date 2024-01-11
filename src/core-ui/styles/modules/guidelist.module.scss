@@ -1,0 +1,44 @@
+@mixin searchBarHeight {
+    height: var(--searchBarHeight);
+    line-height: var(--searchBarHeight);
+    padding-top: 0;
+    padding-bottom: 0;
+}
+
+.guidelist-search-bar {
+    padding: 0;
+    --searchBarHeight: 42px;
+
+    .search-bar-field {
+        @apply w-full;
+
+        input[type=text] {
+            @include searchBarHeight;
+            background-color: white;
+            @apply rounded-lg;
+        }
+
+        fieldset {
+            display: none;
+        }
+    }
+
+    .select-difficulty-field {
+        div, [role=combobox] {
+            @apply w-full;
+        }
+
+        [role=combobox] {
+            @include searchBarHeight;
+            @apply bg-white;
+        }
+    }
+
+    &.search-button {
+        button {
+            @include searchBarHeight;
+            background-color: var(--lightGreen);
+            @apply w-full text-white;
+        }
+    }
+}
